@@ -4,20 +4,23 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "TB_PESSOA")
+@Table(name = "TB_PESSOA", schema = "dbo")
 public class Pessoa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pessoa_seq")
+    @SequenceGenerator(name = "pessoa_seq", sequenceName = "seq_pessoa", allocationSize = 1)
+    @Column(name = "IDPESSOA")
     private Long idPessoa;
 
-    @Column(nullable = false, length = 100)
+
+    @Column(nullable = false, length = 100, name = "NOME")
     private String nome;
 
-    @Column(nullable = false, unique = true, length = 11)
+    @Column(nullable = false, unique = true, length = 11, name = "CPF")
     private String cpf;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "DATANASCIMENTO")
     private LocalDate dataNascimento;
 
     // Getters e Setters
