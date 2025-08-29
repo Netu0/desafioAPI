@@ -14,7 +14,6 @@ public class Transacao {
     @Column(name = "IDTRANSACAO")
     private Long idTransacao;
 
-    
     @Column(name = "IDCONTA", nullable = false)
     private Long idConta;
 
