@@ -16,7 +16,6 @@ public interface TransacaoRepository extends JpaRepository<Transacao, Long> {
             LocalDateTime start,
             LocalDateTime end);
 
-    // usado para total de saques do dia
     List<Transacao> findByIdContaAndTipoAndDataTransacaoBetween(Long idConta, String tipo,
             LocalDateTime start, LocalDateTime end);
 }

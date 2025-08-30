@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.List;  
+import java.util.List;
 
 @RestController
 @RequestMapping("/transacoes")
@@ -44,9 +44,10 @@ public class TransacaoController {
         LocalDateTime e = null;
         if (start != null && end != null) {
             s = start.atStartOfDay();
-            e = end.atTime(LocalTime.MAX);
+            e = end.plusDays(0).atStartOfDay();
         }
 
         return ResponseEntity.ok(transacaoService.extrato(idConta, s, e));
     }
+
 }
