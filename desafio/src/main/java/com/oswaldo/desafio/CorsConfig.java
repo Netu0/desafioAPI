@@ -1,4 +1,4 @@
-/*package com.oswaldo.desafio;
+package com.oswaldo.desafio;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -12,4 +12,4 @@ public class CorsConfig implements WebMvcConfigurer {
             .allowedOrigins("http://localhost:3000")
             .allowedMethods("");
     }
-}*/
+}
